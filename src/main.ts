@@ -1,6 +1,5 @@
 import * as Phaser from "phaser";
 import { Preload } from "./scenes/preload";
-import { Game } from "./scenes/game";
 import { GameFrame } from "./gameParameters";
 
 
@@ -14,7 +13,6 @@ class Main extends Phaser.Game {
     super(config);
 
     this.scene.add("preload", Preload, false);
-    this.scene.add("game", Game, false);
     this.scene.start("preload");
   }
 }
