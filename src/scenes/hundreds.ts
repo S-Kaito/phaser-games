@@ -52,7 +52,7 @@ export default class hundreds extends Phaser.Scene{
 			ball.setCollideWorldBounds(true);
 			ball.setVelocity(directionVector.x, directionVector.y);
 			ball.setBounce(1);
-			let ballText = this.add.text(randomPotision.x, randomPotision.y, i, {
+			let ballText = this.add.text(randomPotision.x, randomPotision.y, i.toString(), {
 				fontFamily: "Arial",
 				fontSize: 24,
 				color: "#000000"
@@ -67,7 +67,7 @@ export default class hundreds extends Phaser.Scene{
 			button.displayWidth = buttonWidth;
 			button.displayHeight = buttonWidth;
 			this.buttonGroup.add(button);
-			let buttonText = this.add.text(button.getBounds().centerX, button.getBounds().centerY, i, {
+			let buttonText = this.add.text(button.getBounds().centerX, button.getBounds().centerY, i.toString(), {
 				fontFamily: "Arial",
 				fontSize: 64,
 				color: "#000000"

@@ -127,7 +127,7 @@ export class playGame extends Phaser.Scene{
         }, this)
     }
     die(){
-        localStorage.setItem(gameOptions.localStorageName, Math.max(this.score, this.topScore));
+        localStorage.setItem(gameOptions.localStorageName, Math.max(this.score, this.topScore).toString());
         this.scene.start('PlayGame');
     }
 }
