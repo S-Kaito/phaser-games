@@ -39,7 +39,11 @@ export class Preload extends Phaser.Scene {
 			for(let j = 0; j < 3; j++){
 				const x = scale.width / 2 + (option.size.width + option.padding.x) * (i - 1);
 				const y = scale.height / 2 + (option.size.height + option.padding.y) * (j - 1);
-				this.buttons[i][j] = new Button(this, x, y, scenes[i][j])
+				this.buttons[i][j] = new Button(this, x, y, scenes[i][j], {
+					onClick: () =>{
+						this.scene.start(scenes[i][j]);
+					}
+				})
 			}
 		}
 	}

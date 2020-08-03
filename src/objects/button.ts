@@ -1,11 +1,25 @@
 import * as Phaser from "phaser"
 
+interface Props{
+	width?: number;
+	height?: number;
+	onClick?: Function;
+}
+
 export default class Button extends Phaser.GameObjects.Container {
 	seKey: string = "";
 	text: Phaser.GameObjects.Text = null;
 	container: Phaser.GameObjects.Rectangle = null;
-	constructor (scene: Phaser.Scene, x, y, text, width = 120, height = 80, { align = 'center', fontSize = 15, color = "black" } = {}) {
+
+	constructor (scene: Phaser.Scene, x, y, text, props: Props, { align = 'center', fontSize = 15, color = "black" } = {}) {
 		super(scene, x, y)
+
+		const {
+			width = 80,
+			height = 120,
+			onClick
+		} = props
+
 		this.scene = scene;
 		this.scene.add.existing(this);
 
@@ -26,6 +40,7 @@ export default class Button extends Phaser.GameObjects.Container {
 			this.text.setColor("black");
 		})
 		this.on('pointerup', p => {
+			onClick && onClick(p);
 		})
 	}
 
