@@ -29,8 +29,8 @@ export default class Button extends Phaser.GameObjects.Container {
 		this.text = scene.add.text(alignLeft ? -width / 2 + 0 : 0, -1, text, { align, fontSize , color}).setOrigin(alignLeft ? 0 : 0.5, 0.5).setPadding(0, 2, 0, 0)
 		this.text.setColor("black");
 
-		this.container = scene.add.rectangle(0, 0, width / 2, height / 2);
-		this.container.setStrokeStyle(1, 0xffffff).setOrigin(alignLeft ? 0 : 0.5, 0.5)
+		this.container = scene.add.rectangle(0, 0, width, height);
+		this.container.setStrokeStyle(1, 0xf0f0f0).setOrigin(alignLeft ? 0 : 0.5, 0.5)
 
 		this.add([this.container, this.text])
 		this.on('pointerover', () => {
