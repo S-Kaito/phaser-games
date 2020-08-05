@@ -12,7 +12,7 @@ const option = {
 	}
 }
 
-const scenes = [["hundreds", "", ""], ["", "", ""], ["", "", ""]]
+const scenes = [["hundreds", "breakout", ""], ["", "", ""], ["", "", ""]]
 
 export class Preload extends Phaser.Scene {
 	private startText?: Phaser.GameObjects.Text

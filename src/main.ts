@@ -1,6 +1,7 @@
 import * as Phaser from "phaser";
 import { Preload } from "./scenes/preload";
 import Hundreds from "./scenes/hundreds";
+import Breakout from "./scenes/breakout";
 import { GameFrame } from "./gameParameters";
 
 
@@ -15,13 +16,14 @@ class Main extends Phaser.Game {
 				autoCenter: Phaser.Scale.CENTER_BOTH,
 			},
 			physics: {
-					default: "arcade",
+				default: "arcade",
 			},
 		};
 		super(config);
 
 		this.scene.add("preload", Preload, false);
 		this.scene.add("hundreds", Hundreds, false);
+		this.scene.add("breakout", Breakout, false);
 		this.scene.start("preload");
 	}
 }
