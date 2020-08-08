@@ -37,7 +37,6 @@ export default class Button extends Phaser.GameObjects.Container {
 			this.text.setColor("white");
 		})
 		this.on('pointerout', () => {
-			console.log("aaa");
 			this.text.setColor("black");
 		})
 		this.on('pointerup', p => {
